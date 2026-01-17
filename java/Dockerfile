@@ -1,7 +1,7 @@
 # ===============================
 # Java Golden Runtime Image
 # ===============================
-FROM eclipse-temurin:11-jre-alpine
+FROM eclipse-temurin:11-alpine-3.21
 
 ENV JAVA_OPTS="-XX:+UseContainerSupport \
                -XX:MaxRAMPercentage=75.0 \
