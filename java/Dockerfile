@@ -10,10 +10,15 @@ LABEL org.opencontainers.image.source="platform-team" \
       org.opencontainers.image.description="Java Golden Runtime Image" \
       org.opencontainers.image.version="17-jre-alpine-v1"
 
-RUN addgroup -S roboshop && \
-    adduser -S roboshop -G roboshop && \
-    mkdir -p /opt/server && \
-    chown -R roboshop:roboshop /opt/server
+# RUN addgroup -S roboshop && \
+#     adduser -S roboshop -G roboshop && \
+#     mkdir -p /opt/server && \
+#     chown -R roboshop:roboshop /opt/server
+
+RUN addgroup -S roboshop
+RUN adduser -S roboshop -G roboshop
+RUN mkdir -p /opt/server
+RUN chown -R roboshop:roboshop /opt/server
 
 WORKDIR /opt/server
 
