@@ -1,0 +1,7 @@
+@Library('shared-libs') _
+platformImageCI(
+  imageName: "java-platform",
+  imageTag: "v1.0.0",
+  dockerfile: "Dockerfile",
+  ecrRepo: "384570460482.dkr.ecr.ap-south-1.amazonaws.com/platform/java-runtime"
+)
