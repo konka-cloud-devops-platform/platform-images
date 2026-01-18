@@ -9,9 +9,9 @@ RUN addgroup -S roboshop && \
     mkdir -p /opt/server && \
     chown -R roboshop:roboshop /opt/server && \
     apk add --no-cache \
-        openjdk11-jre
+        openjdk17-jre
 
-ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk
+ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 ENV PATH=$JAVA_HOME/bin:$PATH
 
 ENV JAVA_OPTS="-XX:+UseContainerSupport \
