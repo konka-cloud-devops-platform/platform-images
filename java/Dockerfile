@@ -1,5 +1,5 @@
 # Java Golden Runtime Image (UBI 9)
-FROM registry.access.redhat.com/ubi9/openjdk-11-runtime
+FROM registry.access.redhat.com/ubi9/openjdk-11-runtime:1.20-3
 
 ENV JAVA_OPTS="-XX:+UseContainerSupport \
                -XX:MaxRAMPercentage=75.0 \
