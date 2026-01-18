@@ -1,4 +1,4 @@
-FROM alpine:edge
+FROM alpine:3.23.2
 RUN apk add --no-cache openjdk11-jre
 ENV JAVA_OPTS="-XX:+UseContainerSupport \
                -XX:MaxRAMPercentage=75.0 \
