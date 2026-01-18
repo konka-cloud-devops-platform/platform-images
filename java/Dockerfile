@@ -1,19 +1,20 @@
-FROM alpine:3.23.2
-RUN apk add --no-cache openjdk11-jre
+# Java Golden Runtime Image (UBI 9)
+FROM registry.access.redhat.com/ubi9/openjdk-11-runtime
+
 ENV JAVA_OPTS="-XX:+UseContainerSupport \
                -XX:MaxRAMPercentage=75.0 \
                -Djava.security.egd=file:/dev/./urandom"
+
 LABEL org.opencontainers.image.source="platform-team" \
       org.opencontainers.image.description="Java Golden Runtime Image" \
-      org.opencontainers.image.version="11-jre-alpine-v1"
-RUN addgroup -S roboshop && \
-    adduser -S roboshop -G roboshop && \
+      org.opencontainers.image.version="11-jre-ubi9-v1"
+
+RUN useradd -r -u 1001 roboshop && \
     mkdir -p /opt/server && \
     chown -R roboshop:roboshop /opt/server
 
 WORKDIR /opt/server
-
-USER roboshop
+USER 1001
 
 EXPOSE 8080
 
