@@ -1,0 +1,9 @@
+@Library('shared-libs') _
+platformImageCI(
+  agentLabel: "builder",
+  dockerfile: "nodejs/Dockerfile",
+  imageName: "nodejs-platform",
+  imageTag: "20-alpine-3.23.2",
+  ecrRepo: "384570460482.dkr.ecr.ap-south-1.amazonaws.com/platform/node-runtime",
+  awsRegion: "ap-south-1"
+)
