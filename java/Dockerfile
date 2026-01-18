@@ -1,34 +1,27 @@
-# ==================================
-# Java Golden Runtime Image (UBI 9)
-# ==================================
+FROM alpine:3.23.2
 
-# Java Golden Runtime Image (UBI 9)
-FROM redhat/ubi9-minimal:9.0.0
+LABEL org.opencontainers.image.source="platform-team" \
+      org.opencontainers.image.description="Java Golden Runtime Image" \
+      org.opencontainers.image.version="11-jre-alpine-3.23.2"
 
-# Install Java 11 (headless) + user tools
-RUN dnf install -y \
-        java-11-openjdk-headless \
-        shadow-utils \
-    && dnf clean all
+RUN addgroup -S roboshop && \
+    adduser -S roboshop -G roboshop && \
+    mkdir -p /opt/server && \
+    chown -R roboshop:roboshop /opt/server && \
+    apk add --no-cache \
+        openjdk11-jre
 
-# JVM tuning
+ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk
+ENV PATH=$JAVA_HOME/bin:$PATH
+
 ENV JAVA_OPTS="-XX:+UseContainerSupport \
                -XX:MaxRAMPercentage=75.0 \
                -Djava.security.egd=file:/dev/./urandom"
 
-LABEL org.opencontainers.image.source="platform-team" \
-      org.opencontainers.image.description="Java Golden Runtime Image" \
-      org.opencontainers.image.version="11-jre-ubi9-v1"
-
-# Create non-root user
-RUN useradd -r -u 1001 roboshop && \
-    mkdir -p /opt/server && \
-    chown -R roboshop:roboshop /opt/server
-
 WORKDIR /opt/server
-USER 1001
+
+USER roboshop
 
 EXPOSE 8080
 
 CMD ["sh", "-c", "java $JAVA_OPTS -jar app.jar"]
-
