@@ -1,0 +1,9 @@
+@Library('shared-libs') _
+platformImageCI(
+  agentLabel: "builder",
+  dockerfile: "python/Dockerfile",
+  imageName: "python-platform",
+  imageTag: "3.12-alpine-3.23.2",
+  ecrRepo: "384570460482.dkr.ecr.ap-south-1.amazonaws.com/platform/python-runtime",
+  awsRegion: "ap-south-1"
+)
