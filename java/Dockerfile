@@ -6,10 +6,10 @@
 FROM redhat/ubi9-minimal:9.0.0
 
 # Install Java 11 (headless) + user tools
-RUN microdnf install -y \
+RUN dnf install -y \
         java-11-openjdk-headless \
         shadow-utils \
-    && microdnf clean all
+    && dnf clean all
 
 # JVM tuning
 ENV JAVA_OPTS="-XX:+UseContainerSupport \
