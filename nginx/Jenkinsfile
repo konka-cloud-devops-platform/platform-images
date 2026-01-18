@@ -1,0 +1,9 @@
+@Library('shared-libs') _
+platformImageCI(
+  agentLabel: "builder",
+  dockerfile: "nginx/Dockerfile",
+  imageName: "nginx-platform",
+  imageTag: "alpine-3.23.2-v1.0.0",
+  ecrRepo: "384570460482.dkr.ecr.ap-south-1.amazonaws.com/platform/nginx",
+  awsRegion: "ap-south-1"
+)
