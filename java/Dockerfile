@@ -2,7 +2,7 @@ FROM alpine:3.23.2
 
 LABEL org.opencontainers.image.source="platform-team" \
       org.opencontainers.image.description="Java Golden Runtime Image" \
-      org.opencontainers.image.version="11-jre-alpine-3.23.2"
+      org.opencontainers.image.version="17-jre-alpine-3.23.2"
 
 RUN addgroup -S roboshop && \
     adduser -S roboshop -G roboshop && \

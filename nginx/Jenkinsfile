@@ -1,6 +1,6 @@
 @Library('shared-libs') _
 platformImageCI(
-  agentLabel: "builder",
+  // agentLabel: "builder",
   dockerfile: "nginx/Dockerfile",
   imageName: "nginx-platform",
   imageTag: "alpine-3.23.2-v1.0.0",
