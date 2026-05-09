@@ -1,6 +1,6 @@
 @Library('shared-libs') _
 platformImageCI(
-  // agentLabel: "builder",
+  agentLabel: "agent",
   dockerfile: "python/Dockerfile",
   imageName: "python-platform",
   imageTag: "3.12-alpine-v1.0.0",

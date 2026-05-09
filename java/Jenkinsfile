@@ -1,6 +1,6 @@
 @Library('shared-libs') _
 platformImageCI(
-  // agentLabel: "builder",
+  agentLabel: "agent",
   dockerfile: "java/Dockerfile",
   imageName: "java-platform",
   imageTag: "17-jre-alpine-v1.0.0",

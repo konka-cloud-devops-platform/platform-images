@@ -1,6 +1,6 @@
 @Library('shared-libs') _
 platformImageCI(
-  // agentLabel: "builder",
+  agentLabel: "agent",
   dockerfile: "nodejs/Dockerfile",
   imageName: "nodejs-platform",
   imageTag: "20-alpine-v1.0.0",
