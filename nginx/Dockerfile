@@ -33,7 +33,7 @@ LABEL org.opencontainers.image.source="platform-team" \
 
 # Install nginx
 RUN apk add --no-cache nginx && \
-    apk update && apk --no-cache upgrade && \
+    apk update && apk --no-cache upgrade
 
 # Remove default content and config
 RUN rm -rf /usr/share/nginx/html/* \
