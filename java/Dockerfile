@@ -4,7 +4,8 @@ LABEL org.opencontainers.image.source="platform-team" \
       org.opencontainers.image.description="Java Golden Runtime Image" \
       org.opencontainers.image.version="21-jre-alpine-3.23.2"
 
-RUN addgroup -S roboshop && \
+RUN apk update && apk --no-cache upgrade && \
+    addgroup -S roboshop && \
     adduser -S roboshop -G roboshop && \
     mkdir -p /opt/server && \
     chown -R roboshop:roboshop /opt/server && \
