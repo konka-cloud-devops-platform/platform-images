@@ -16,7 +16,8 @@ RUN apk add --no-cache \
     npm
 
 # Create user and directories
-RUN addgroup -S roboshop && \
+RUN apk update && apk --no-cache upgrade && \
+    addgroup -S roboshop && \
     adduser -S roboshop -G roboshop && \
     mkdir -p /opt/server && \
     chown -R roboshop:roboshop /opt/server
