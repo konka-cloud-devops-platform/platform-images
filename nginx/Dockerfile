@@ -32,7 +32,8 @@ LABEL org.opencontainers.image.source="platform-team" \
       org.opencontainers.image.version="nginx-alpine-3.23.2"
 
 # Install nginx
-RUN apk add --no-cache nginx
+RUN apk add --no-cache nginx && \
+    apk update && apk --no-cache upgrade && \
 
 # Remove default content and config
 RUN rm -rf /usr/share/nginx/html/* \
