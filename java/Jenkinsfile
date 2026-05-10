@@ -3,7 +3,7 @@ platformImageCI(
   agentLabel: "agent",
   dockerfile: "java/Dockerfile",
   imageName: "java-platform",
-  imageTag: "21-jre-alpine-v1.0.0",
+  imageTag: "21-v1.0.0",
   ecrRepo: "384570460482.dkr.ecr.ap-south-1.amazonaws.com/platform/java-runtime",
   awsRegion: "ap-south-1"
 )
